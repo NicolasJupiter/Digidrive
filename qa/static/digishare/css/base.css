@@ -1,0 +1,514 @@
+@font-face{
+    font-family: 'Adobe Garamond Pro';
+    src: url('../fonts/Adobe_Garamond_Pro_Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Cambria';
+    src: url('../fonts/cambria.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/RobotoCondensed-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Black Italic';
+    src: url('../fonts/Roboto-BlackItalic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Black';
+    src: url('../fonts/Roboto-Black.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Bold Condensed Italic';
+    src: url('../fonts/Roboto-BoldCondensedItalic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Bold Condensed Italic';
+    src: url('../fonts/Roboto-BoldCondensedItalic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Bold Condensed';
+    src: url('../fonts/Roboto-BoldCondensed.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Bold Condensed Italic';
+    src: url('../fonts/Roboto-BoldCondensedItalic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Bold Italic';
+    src: url('../fonts/Roboto-BoldItalic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Bold';
+    src: url('../fonts/Roboto-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Condensed Italic';
+    src: url('../fonts/Roboto-CondensedItalic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Italic';
+    src: url('../fonts/Roboto-Italic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Light Italic';
+    src: url('../fonts/Roboto-LightItalic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Light';
+    src: url('../fonts/Roboto-Light.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Medium Italic';
+    src: url('../fonts/Roboto-MediumItalic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Medium';
+    src: url('../fonts/Roboto-Medium.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Thin Italic';
+    src: url('../fonts/Roboto-ThinItalic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto Thin';
+    src: url('../fonts/Roboto-Thin.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+.background-gradient{
+    position:fixed;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    width:100vw;
+    height:100vh;
+    z-index:-5;
+    background: rgba(222,235,247,1); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(247,250,253,0.8),rgba(222,235,247,0.8),rgba(189,215,237,0.8),rgba(157,195,230,0.8)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(rgba(247,250,253,0.8),rgba(222,235,247,0.8),rgba(189,215,237,0.8),rgba(157,195,230,0.8)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(rgba(247,250,253,0.8),rgba(222,235,247,0.8),rgba(189,215,237,0.8),rgba(157,195,230,0.8)); /*Fx 3.6-15*/
+    background: linear-gradient(rgba(247,250,253,0.8),rgba(222,235,247,0.8),rgba(189,215,237,0.8),rgba(157,195,230,0.8)); /*Standard*/
+}
+.box-shadow{
+    box-shadow:2px 2px 3px #555;
+}
+.main-body{
+    margin:65px 15px 15px 15px;
+    width:calc(100% - 30px);
+}
+.red-circle{
+    height:40px;
+    width:40px;
+    border-radius:20px;
+    background:#F00;
+    font-size:20px;
+    line-height:40px;
+    color:#FFF;
+    text-align:center;
+}
+.blue-circle{
+    height:40px;
+    width:40px;
+    border-radius:20px;
+    background:#134ea5;
+    font-size:20px;
+    line-height:40px;
+    color:#FFF;
+    text-align:center;
+}
+.yellow-circle{
+    height:40px;
+    width:40px;
+    border-radius:20px;
+    background:#faa007;
+    font-size:20px;
+    line-height:40px;
+    color:#FFF;
+    text-align:center;
+}
+.green-circle{
+    height:40px;
+    width:40px;
+    border-radius:20px;
+    background:#00b050;
+    font-size:20px;
+    line-height:40px;
+    color:#FFF;
+    text-align:center;
+}
+.red-circle-menu{
+    height:24px;
+    width:24px;
+    border-radius:12px;
+    background:#F00;
+    font-size:14px;
+    line-height:24px;
+    color:#FFF;
+    text-align:center;
+}
+.blue-circle-menu{
+    height:24px;
+    width:24px;
+    border-radius:12px;
+    background:#134ea5;
+    font-size:14px;
+    line-height:24px;
+    color:#FFF;
+    text-align:center;
+}
+.yellow-circle-menu{
+    height:24px;
+    width:24px;
+    border-radius:12px;
+    background:#faa007;
+    font-size:14px;
+    line-height:24px;
+    color:#FFF;
+    text-align:center;
+}
+.green-circle-menu{
+    height:24px;
+    width:24px;
+    border-radius:12px;
+    background:#00b050;
+    font-size:14px;
+    line-height:24px;
+    color:#FFF;
+    text-align:center;
+}
+.red-circle-small{
+    height:18px;
+    width:18px;
+    border-radius:9px;
+    background:#F00;
+    font-size:10px;
+    line-height:18px;
+    color:#FFF;
+    text-align:center;
+}
+.blue-circle-small{
+    height:18px;
+    width:18px;
+    border-radius:9px;
+    background:#134ea5;
+    font-size:10px;
+    line-height:18px;
+    color:#FFF;
+    text-align:center;
+}
+.yellow-circle-small{
+    height:18px;
+    width:18px;
+    border-radius:9px;
+    background:#faa007;
+    font-size:10px;
+    line-height:18px;
+    color:#FFF;
+    text-align:center;
+}
+.green-circle-small{
+    height:18px;
+    width:18px;
+    border-radius:9px;
+    background:#00b050;
+    font-size:10px;
+    line-height:18px;
+    color:#FFF;
+    text-align:center;
+}
+.text-orange{
+    color:#fa6607;
+}
+.text-red{
+    color:#F00;
+}
+.text-blue{
+    color:#134ea5;
+}
+.text-green{
+    color:#00b050;
+}
+.text-yellow{
+    color:#faa007;
+}
+.background-dark-red{
+    background: rgba(179,05,30,1);
+}
+.background-red{
+    background:#F00;
+}
+.background-blue{
+    background:#134ea5;
+}
+.background-green{
+    background:#00b050;
+}
+.background-yellow{
+    background:#faa007;
+}
+.background-orange{
+    background:#fa6607;
+}
+.feature_icon_outer_small{
+    position:relative;
+    float:left;
+    width:40px;
+    height:40px;
+}
+.footer-container{
+    width:600px;
+    margin:15px calc(50% - 300px) 0px calc(50% - 300px);
+}
+.container-block{
+    width:100%;
+    margin:0 auto;
+    padding-left:0px;
+    padding-right:0px;
+}
+.header-container{
+    width:100%;
+    margin:0 auto;
+}
+.menu-logo{
+    position:relative;
+    float:left;
+    height:50px;
+    padding:10px;
+    font-size:24px;
+    line-height:30px;
+    color:#FFF;
+}
+.menu-name{
+    position:relative;
+    float:left;
+    height:50px;
+    padding:10px;
+    font-size:20px;
+    line-height:30px;
+    font-family:'Roboto Condensed';
+    color:#FFF;
+}
+.home-logo{
+    position:relative;
+    float:right;
+    height:50px;
+    padding:10px;
+    font-size:24px;
+    line-height:30px;
+    color:#FFF;
+}
+.header-name-block{
+    text-align:center;
+}
+.header-inner-block{
+    height:50px;
+    padding:10px 0px;
+    width:180px;
+    margin:0px calc(50% - 90px);
+}
+.header-logo{
+    position:relative;
+    float:left;
+    height:30px;
+    border-radius:15px;
+    text-align:center;
+    font-size:20px;
+    line-height:30px;
+    width:30px;
+    background:#FFF;
+}
+.header-name{
+    position:relative;
+    float:left;
+    padding:0px 0px 0px 10px;
+    height:30px;
+    font-size:20px;
+    line-height:30px;
+    font-family:'Roboto Condensed';
+    color:#FFF;
+}
+.subscribe-menu{
+    position:relative;
+    float:left;
+    height:50px;
+    padding:10px;
+    font-size:20px;
+    line-height:30px;
+    font-family:'Roboto Condensed';
+    color:#FFF;
+}
+.user-pic{
+    margin:5px 0px;
+    height:40px;
+    border-radius:20px;
+    text-align:center;
+    font-size:20px;
+}
+.menu-box{
+    position:fixed;
+    top:0px;
+    left:0px;
+    margin:65px 0px 15px 15px;
+    height:360px;
+    width:210px;
+    background:#FFF;
+    z-index:10;
+}
+.feature_menu_description_small{
+    position:relative;
+    float:left;
+    width:calc(100% - 24px);
+    height:24px;
+    padding:0px 5px;
+}
+.feature_block_menu{
+    margin:10px 0px;
+}
+.feature_menu_name{
+    font-size:16px;
+    line-height:24px;
+    height:24px;
+    font-family:'Roboto Condensed';
+}
+.feature_small_desc{
+    font-size:16px;
+    line-height:24px;
+    height:48px;
+    font-family:'Roboto';
+}
+.feature_menu_icon_outer_small{
+    width:24px;
+    height:auto;
+    position:relative;
+    float:left;
+}
+.for_mobile_view{
+    display:none;
+    padding:0px;
+    border-radius:0px;
+    margin-bottom:15px;
+}
+.for_mobile_view a{
+    font-family:'Roboto Medium';
+    font-size:14px;
+    line-height:1.5;
+    border-radius:0;
+}
+@media only screen and (max-width: 420px){
+    .main-body{
+        padding:0px;
+    }
+    /* Media query for header */
+    .home-logo,
+    .subscribe-menu,
+    .menu-name{
+        display:none;
+    }
+    .menu-box{
+        display:none;
+    }
+    .feature_icon_outer_small{
+        width:6.5vh;
+        height:6.5vh;
+    }
+
+    /* Media query for landing page */
+    .red-circle{
+        height:6.5vh;
+        width:6.5vh;
+        border-radius:3.25vh;
+        background:#F00;
+        font-size:3.25vh;
+        line-height:6.5vh;
+        color:#FFF;
+        text-align:center;
+    }
+    .blue-circle{
+        height:6.5vh;
+        width:6.5vh;
+        border-radius:3.25vh;
+        background:#134ea5;
+        font-size:3.25vh;
+        line-height:6.5vh;
+        color:#FFF;
+        text-align:center;
+    }
+    .yellow-circle{
+        height:6.5vh;
+        width:6.5vh;
+        border-radius:3.25vh;
+        background:#faa007;
+        font-size:3.25vh;
+        line-height:6.5vh;
+        color:#FFF;
+        text-align:center;
+    }
+    .green-circle{
+        height:6.5vh;
+        width:6.5vh;
+        border-radius:3.25vh;
+        background:#00b050;
+        font-size:3.25vh;
+        line-height:6.5vh;
+        color:#FFF;
+        text-align:center;
+    }
+    .footer-container{
+        width:100%;
+        margin:15px 0px 0px 0px;
+    }
+    .for_mobile_view{
+        display:block;
+    }
+
+}

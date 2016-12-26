@@ -1,0 +1,233 @@
+<!--
+    Copyright:  Trendzlink Technology Pvt Ltd
+    Author:     Deepak MP
+-->
+{% extends "base.html" %}
+{% load django_markdown %}
+{% load staticfiles %}
+{% block extraconfig2 %}
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/forum_css/forum.css' %}" />
+{% endblock %}
+{% block topheader %}
+    {% include "headerforum.html" %}
+{% endblock %}
+
+{% block leftsidebar %}
+<div class="col-md-2 col-lg-2 my-div13">
+    {% include "menu.html" %}
+</div>
+<!--
+<div class="forum-add-question-block myButton">
+    <div class="forum-add-question">
+        <a href="">
+            <div class="forum-add-question-icon-outer">
+                <div class="forum-add-question-icon"><i class="fa fa-plus"></i></div>
+            </div>
+        </a>
+        <div class="forum-add-question-text">Ask New Question</div>
+    </div>
+</div>-->
+{% endblock %}
+
+{% block content %}
+<div class="col-md-8 col-xs-12 col-lg-8 col-md-offset-2 col-lg-offset-2" style="padding:0px;">
+	<div style="height:65px;"><p> &nbsp; </p></div>
+	
+	
+<div style="padding: 0 20px;">	
+{% if question.closed %}
+  <div class="closed"></div>
+{% else %}
+    {% if question.reward %}
+    <div class="rewarding"></div>
+    {% else %}
+    <div class="open"></div>
+    {% endif %}
+{% endif %}
+
+
+{% if message %}
+    <div class="alert alert-danger" role="alert">{{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{% endif %}
+
+{% comment %}
+{% if question.reward %}
+    <div class="alert alert-info" role="alert">This question has been marked to be worth a reward of <b>{{ question.reward }}</b> points!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+{% endif %}
+{% endcomment %}
+
+<div class="panel panel-default box-shadow my-div15 my-div15-first-panel" style="padding:20px;">
+  <div class="row">
+    <div class="col-sm-12">
+      <small class="pull-right">Asked by <span>
+		  <a href="{% url 'qa_profile' question.user.id %}">
+			  {{ question.user.username }}</a></span>, {{ question.pub_date }}</small>
+      {% if user.is_authenticated and question.user == user %}<a href="{% url 'qa_update_question' question.id %}"><small class="pull-right">Edit &nbsp;</small></a>
+		{% endif %}
+      <h3>{{ question.title }}</h3>
+      <h4>{{ question.description|markdown }}</h4>
+      <p>
+		  <div class="questioncomments" style="display:none;">
+{% if last_comments %}
+  {% for comment in last_comments %}
+  <div class="row">
+    <div class="col-md-9 col-md-offset-1">
+    <p><b>{{ comment.comment_text|markdown }}</b><small>by <a href="{% url 'qa_profile' comment.user.id %}">{{ comment.user.username }}</a> <div>at {{ comment.pub_date }}</div></small></p>{% if comment.user == user %}<a href="{% url 'qa_update_question_comment' comment.id %}" class="pull-left"><small><u>Edit</u>&nbsp;</small></a>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+			{% else %}<h5>No comments</h5>{% endif %}</div>
+      {% if question.closed %}
+          <p class="pull-right">This Question has been closed.</p>
+      {% else %}
+		  <a class="viewcomments" role="button"><u><span>View Comments</span></u></a>
+          <a class="" href="{% url 'qa_create_question_comment' question.id %}" role="button"><u>Add Comment</u></a>
+      {% endif %}
+        {% if user.is_authenticated and question.user != user %}
+      <div class ="col-sm-3"><div class="row">
+        <form action="{% url 'qa_question_vote' question.id %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.path }}">
+          <input type="hidden" name="upvote" value="on">
+          <button type="submit" class="btn btn-sm btn-success pull-left" data-toggle="tooltip" data-placement="top" title="Vote Up this answer"><span>Upvote | {{ question.total_points }}</span></button>
+        </form>
+          <form action="{% url 'qa_question_vote' question.id %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.path }}">
+          <button style="margin-left:10px;" type="submit" class="btn btn-sm pull-left" data-toggle="tooltip" data-placement="bottom" title="Vote Down this answer"><span>Downvote</span></button>
+        </form>
+      </div></div>
+    {% endif %}
+    </div>
+  </div>
+</div>
+
+		<script>
+        $(".viewcomments").click(function() {
+          $('.questioncomments').slideToggle().toggleClass('active');
+			if ($('.questioncomments').hasClass('active')) {
+            $('.viewcomments span').text('Hide Comments');
+          } else {
+            $('.viewcomments span').text('View Comments');
+          }
+        });
+        </script>
+
+  <h3>Answers</h3>
+
+{% if answers %}
+			    
+    {% for answer in answers %}
+
+
+<div class="col-sm-12 panel panel-default box-shadow my-div15 my-div15-first-panel" style="padding-bottom:20px;padding-left:0px;">
+    {% if user.is_authenticated and answer.user != user %}
+      <div class ="col-md-1 col-sm-1" style="display:block;padding:2px;padding-top:20px;width:auto;">
+          <form action="{% url 'qa_answer_vote' answer.id %}" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="next" value="{{ request.path }}">
+              <input type="hidden" name="upvote" value="on">
+              <button type="submit" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Vote Up this answer"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+          </form>
+              <big class="custom-big"><b>&nbsp;&nbsp;&nbsp;{{ answer.total_points }}</b></big><br>
+          <form action="{% url 'qa_answer_vote' answer.id %}" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="next" value="{{ request.path }}">
+              <button type="submit" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="bottom" title="Vote Down this answer"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+          </form>
+      </div>
+    {% endif %}
+						
+      <div class ="col-md-10" style="padding-left:0px;">
+          <div id="ans" class="alert alert-primary" role="alert">{{ answer.answer_text|markdown }}</div>
+		  
+		  <div class="answercomments{{ answer.pk }} col-md-11 col-md-offset-1 pull-right" style="display:none;">
+        {% if answer.answercomment_set %}
+          {% for comment in answer.answercomment_set.all %}
+			  <div style="border-bottom:solid;border-width:1px;border-color:gray;"><div class="row">
+				  <div class="col-md-8">
+					  <p><b>{{ comment.comment_text|markdown }}</b></p></div>
+				<div class="col-md-4"><p><small>
+					<div class="pull-right">at {{ comment.pub_date }}</div>
+					<a href="{% url 'qa_profile' comment.user.id %}" class="pull-right">by {{ comment.user.username }}&nbsp;</a>
+				</small>
+					</p><div style="clear:both;"></div>
+			  {% if comment.user == user %}<a href="{% url 'qa_update_answer_comment' comment.id %}" class="pull-right"><small>&nbsp;&nbsp;&nbsp;<u>Edit</u>&nbsp;</small></a>{% endif %}
+			  </div></div></div>
+          {% endfor %}
+        {% endif %}{% if answer.answercomment_set.all|length == 0 %}<p>No comments</p>{% endif %}
+	  <br><a href="{% url 'qa_create_answer_comment' answer.id %}">
+			<small><u>Add comment</u>&nbsp;<span class="glyphicon glyphicon-comment" aria-hidden="true"></span></small></a><hr>
+      </div>
+		  
+        
+		  
+          <div class ="col-md-5">
+            <p class="">Answer by<b>
+				<a href="{% url 'qa_profile' answer.user.id %}">{{ answer.user.username }}&nbsp;</a>({{ answer.user.userqaprofile.points }})</b>
+			  </p>
+			  {% if answer.user == user %}<a href="{% url 'qa_update_answer' answer.id %}"><small><u>Edit Answer</u>&nbsp;</small></a>{% endif %}
+			  <a class="viewanswercomments{{ answer.pk }}"><small><u><span>Show comments ({{ answer.answercomment_set.all|length }})</span></u></small></a>
+
+          </div>
+    </div>
+                {% if user.is_authenticated and answer.question.user == user and answer.question.closed == False and answer.user != user %}
+                    <form action="{% url 'qa_close_question' question.id %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ request.path }}"/>
+                        <button type="submit" class="btn btn-success btn-sm pull-right" data-toggle="tooltip" data-placement="bottom" title="Close this question"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+                    </form>
+                {% else %}
+                    {% if  answer.answer == True %}
+                        <button class="btn btn-success btn-sm pull-right" title="Picked Answer"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
+                    {% endif %}
+                {% endif %}
+</div>
+
+			<script>
+        $(".viewanswercomments{{ answer.pk }}").click(function() {
+          $('.answercomments{{ answer.pk }}').slideToggle().toggleClass('active');
+			if ($('.answercomments{{ answer.pk }}').hasClass('active')) {
+            $('.viewanswercomments{{ answer.pk }} span').text('Hide comments');
+          } else {
+            $('.viewanswercomments{{ answer.pk }} span').text('Show comments ({{ answer.answercomment_set.all|length }})');
+          }
+        });
+        </script>
+    {% endfor %}
+</div>
+{% else %}
+<div class="panel panel-default box-shadow my-div15 my-div15-first-panel" style="padding:20px;">
+<center><h2>This question is still open, <a href="{% url 'qa_create_answer' question.id %}" role="button"><u>write answer!</u></a></h2></center>
+</div>
+    {% endif %}
+		</div>
+<div>
+	{% block newanswer %}
+<div class="forum-add-question-block1 myButton">
+    <div class="forum-add-question">
+        <a href="{% url 'qa_create_answer' question.id %}">
+                <div class="forum-add-question-icon-outer">
+                    <div class="forum-add-question-icon"><i class="fa fa-plus"></i></div>
+                </div>
+        </a>
+    </div>
+</div>
+	{% endblock newanswer %}
+{% endblock content %}
+{% block extra_js %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+{% endblock extra_js %}
+</div>

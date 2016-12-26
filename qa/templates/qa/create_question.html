@@ -1,0 +1,42 @@
+<!--
+    Copyright:  Trendzlink Technology Pvt Ltd
+    Author:     Deepak MP
+-->
+{% extends "base.html" %}
+{% load django_markdown %}
+{% load staticfiles %}
+{% block extraconfig2 %}
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/forum_css/forum.css' %}" />
+{% endblock %}
+{% block topheader %}
+    {% include "headerforum.html" %}
+{% endblock %}
+
+{% block leftsidebar %}
+<div class="col-md-2 col-lg-2 my-div13">
+    {% include "menu.html" %}
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="col-md-8 col-xs-12 col-lg-8 col-md-offset-2 col-lg-offset-2" style="padding:0 20px;">
+	<div style="height:65px;"><p> &nbsp; </p></div>
+
+  {% if message %}
+  <strong>Enter a valid Question!</strong>
+  {% endif %}
+
+  <form method="post" action="{% block action_url %}{% url 'qa_create_question' %}{% endblock action_url %}">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input class="btn btn-success" type="submit" value="Submit Question" />
+  </form>
+
+</div>
+
+{% endblock content %}
+
+{% block extra_js %}
+  {% markdown_editor "#id_description" %}
+  {% markdown_media %}
+{% endblock extra_js %}

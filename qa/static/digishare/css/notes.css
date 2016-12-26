@@ -1,0 +1,271 @@
+.notes-first-panel{
+    margin:0px 0px 15px 0px;
+    padding:10px 15px;
+    background:#FFF;
+}
+.notes-category{
+    padding:0px 5px;
+    float:left;
+    font-size:12px;
+    line-height:1.5;
+    font-family:'Roboto Condensed';
+}
+.notes-panel-title{
+    font-size:20px;
+    height:60px;
+    line-height:30px;
+    font-family:'Cambria';
+}
+.notes-panel-summary{
+    font-size:14px;
+    line-height:20px;
+    font-family:'Cambria';
+    padding:0px;
+}
+.notes-summary-hyperlink{
+    font-size:12px;
+    line-height:18px;
+    font-family:'Roboto Condensed';
+    padding:0px;
+}
+.notes-categories-body{
+    position:fixed;
+    top:65px;
+    right:15px;
+    width:200px;
+    height:auto;
+    background:#FFF;
+}
+.btn-notes-category{
+    width:100%;
+    font-size:16px;
+    line-height:16px;
+    text-align:center;
+    padding:6px 12px;
+    border:1px solid #2d2d2a;
+    border-radius:3px;
+    font-family:'Roboto Condensed';
+}
+.notes-expanded-panel{
+    margin:0px 0px 15px 0px;
+    padding:10px 15px;
+    background:#FFF;
+}
+.news-expanded-headline{
+    margin:10px 0px;
+    text-align:center;
+    font-family:'Roboto Condensed';
+    font-weight:600;
+}
+.news-expanded-summary{
+    font-family:'Roboto';
+    font-size:16px;
+    line-height:26px;
+}
+.notes-right-panel{
+    padding:10px;
+    margin-bottom:15px;
+    width:calc(100% - 15px);
+    margin-right:15px;
+}
+.notes-most-viewed-body{
+    padding:0px;
+    margin:15px 0px 0px 0px;
+}
+.mydiv1{
+    padding:0px;
+    margin-top:55px;
+}
+.mydiv2{
+   padding:0px;
+}
+.mydiv3{
+   float:left;
+}
+
+
+
+.mydiv4{
+  border-top:1px solid #2d2d2a;
+  margin-top:15px;
+}
+
+
+
+.mydiv5{
+ margin:0px;
+}
+
+.mydiv6{
+ margin-top:5px;
+}
+
+.mydiv7{
+  padding:0px;
+  margin-top:50px;
+}
+
+.mydiv8{
+ margin-left:5px;
+}
+
+.mydiv9{
+   padding:0px;
+   margin-top:70px;
+}
+
+.for_mobile_view
+{
+display:none;
+}
+.my-div1111
+{
+margin-top:0px;
+padding:0px;
+}
+
+.for_mobile_view
+{
+display:none;
+}
+
+/* media quierires for forum_home */
+@media only screen and (max-width:420px){
+.my-div111
+{
+    display:none;
+}
+
+.margin_for_mobile {
+  margin-top:15px;
+}
+
+.margin_for_mobile1{
+  margin-top:0px;
+}
+
+.my-div555
+{
+    padding:0px;
+}
+.for_mobile_view
+{
+display:block;
+font-family:'Roboto Condensed';
+  font-size:14px;
+
+}
+
+.for_mobile_view1
+{
+display:block;
+font-family:'Roboto Condensed';
+  font-size:14px;
+  margin-top:15px;
+}
+.remove_padding
+{
+padding:0px;
+}
+.my-div1111
+{
+clear:both;
+margin-top:0px;
+}
+.my-div113
+{
+display:none;
+}
+}
+
+@media (min-width:640px) and (max-width:767px){
+.my-div111
+{
+    display:none;
+}
+.my-div555
+{
+    padding:0px;
+}
+.for_mobile_view
+{
+display:block;
+font-family:'Roboto Condensed';
+  font-size:14px;
+}
+
+.remove_padding
+{
+padding:0px;
+}
+.my-div1111
+{
+clear:both;
+margin-top:0px;
+}
+.my-div113
+{
+display:none;
+}
+}
+
+@media (min-width:421px) and (max-width:639px){
+.my-div111
+{
+    display:none;
+}
+.my-div555
+{
+    padding:0px;
+}
+.for_mobile_view
+{
+display:block;
+font-family:'Roboto Condensed';
+  font-size:14px;
+}
+.remove_padding
+{
+padding:0px;
+}
+.my-div1111
+{
+clear:both;
+margin-top:0px;
+}
+.my-div113
+{
+display:none;
+}
+}
+
+@media (min-width:768px) and (max-width:1024px)
+{
+.my-div111
+{
+    display:none;
+}
+.my-div555
+{
+    padding:0px;
+}
+.for_mobile_view
+{
+display:block;
+font-family:'Roboto Condensed';
+  font-size:14px;
+}
+.remove_padding
+{
+padding:0px;
+}
+.my-div1111
+{
+clear:both;
+margin-top:0px;
+}
+.my-div113
+{
+display:none;
+}
+}

@@ -1,0 +1,392 @@
+#img1{
+    display:block;
+}
+#img2{
+    display:none;
+}
+.presentation-header-container{
+    width:900px;
+    margin-left:calc(50% - 450px);
+    margin-right:calc(50% - 450px);
+    background:#FFF;
+}
+.form_page{
+    position:relative;
+    min-height:100%;
+    min-width:100%;
+    height:auto; width:auto;
+    display:flex;
+    overflow:hidden;
+    flex-direction:column;
+    justify-content:center;
+}
+.form_page .image_block{
+    position:absolute;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+}
+.image_block img{
+    width:100%;
+    height:auto;
+}
+.image-overlay{
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    background: rgba(222,235,247,1); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(247,250,253,0.8),rgba(222,235,247,0.8),rgba(189,215,237,0.8),rgba(157,195,230,0.8)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(rgba(247,250,253,0.8),rgba(222,235,247,0.8),rgba(189,215,237,0.8),rgba(157,195,230,0.8)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(rgba(247,250,253,0.8),rgba(222,235,247,0.8),rgba(189,215,237,0.8),rgba(157,195,230,0.8)); /*Fx 3.6-15*/
+    background: linear-gradient(rgba(247,250,253,0.8),rgba(222,235,247,0.8),rgba(189,215,237,0.8),rgba(157,195,230,0.8)); /*Standard*/
+}
+.text-overlay{
+    position:absolute;
+    width:900px;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    margin-top:50px;
+    margin-left:calc(50% - 450px);
+    margin-right:calc(50% - 450px);
+}
+.image_logo{
+    position:relative;
+    float:left;
+    background: #FFF;
+    padding:15px;
+    border-radius:5px;
+    box-shadow:0px 1px 3px #26313E;
+}
+.image_logo img{
+    width:100px;
+    height:auto;
+}
+.btn-login-landing{
+    background: rgba(179,05,30,1);
+    border-radius:5px;
+    font-family: 'Roboto Condensed';
+    color: #FFF;
+    font-size:16px;
+    box-shadow:0px 1px 3px #26313E;
+}
+.tag_line{
+    color:#2d2d2a;
+    font-family:'Adobe Garamond Pro';
+    text-align:center;
+}
+.tag_line_outer{
+    width:600px;
+    margin-left:calc(50% - 300px);
+    margin-right:calc(50% - 300px);
+    color:#2d2d2a;
+    border-top:solid 1px #2d2d2a;
+}
+.btn-login-landing a{
+    color: #FFF;
+    font-size:16px;
+}
+.btn-start-landing{
+    background: rgba(250,102,07,1);
+    border-radius:5px;
+    font-family: 'Roboto Condensed';
+    color: #FFF;
+    font-size:20px;
+    box-shadow:0px 1px 3px #26313E;
+}
+.btn-start-landing a{
+    color: #FFF;
+    font-size:20px;
+}
+.trendzlink_logo{
+    width:150px;
+    margin-left:calc(50% - 75px);
+    margin-right:calc(50% - 75px);
+}
+.trendzlink_logo img{
+    width:150px;
+    height:auto;
+}
+.btn-start-landing-header{
+    background: rgba(250,102,07,1);
+    border-radius:5px;
+    font-family: 'Roboto Condensed';
+    color: #FFF;
+    font-size:16px;
+    float:left;
+    position:relative;
+    height:40px;
+}
+.btn-start-landing-header a{
+    color: #FFF;
+    font-size:16px;
+}
+.btn-login-landing-header{
+    background: rgba(179,05,30,1);
+    border-radius:5px;
+    font-family: 'Roboto Condensed';
+    color: #FFF;
+    font-size:16px;
+    float:right;
+    position:relative;
+    height:40px;
+}
+.btn-login-landing-header a{
+    color: #FFF;
+    font-size:16px;
+}
+.feature-overlay{
+    position:absolute;
+    width:800px;
+    top:0px;
+    left:0px;
+    margin-top:50px;
+    margin-left:calc(50% - 400px);
+    margin-right:calc(50% - 400px);
+    z-index:50;
+    background:#FFF;
+    box-shadow:1px 1px 2px #26313E;
+    border-radius:10px;
+}
+.feature_header{
+    text-align:center;
+    font-family:'Roboto Condensed';
+    border-bottom:1px solid #2d2d2a;
+    color:#2d2d2a;
+}
+.feature_icon_outer{
+    position:relative;
+    float:left;
+    width:40px;
+    height:88px;
+}
+.feature_description{
+    position:relative;
+    float:left;
+    width:calc(100% - 40px);
+    height:88px;
+    padding:0px 15px;
+}
+.feature_description_small{
+    position:relative;
+    float:left;
+    width:calc(100% - 40px);
+    height:40px;
+    padding:0px 15px;
+}
+.feature_block{
+    margin:15px 0px;
+}
+.feature_name_pricing,
+.feature_name{
+    font-size:24px;
+    line-height:40px;
+    height:40px;
+    font-family:'Roboto Condensed';
+}
+.feature_small_desc{
+    font-size:16px;
+    line-height:24px;
+    height:48px;
+    font-family:'Roboto Light';
+}
+.pack_name{
+    font-size:24px;
+    font-family:'Roboto Medium';
+    padding:0px;
+    text-align:center;
+    line-height:40px;
+    height:40px;
+    color:#FFF;
+}
+.free_pack{
+    background: #134ea5;
+}
+.paid_pack{
+    background: rgba(179,05,30,1);
+}
+.feature_check{
+    height:40px;
+    font-size:24px;
+    line-height:40px;
+    color:#2d2d2a;
+    text-align:center;
+    font-family:'Roboto';
+    color:#00b050;
+    font-weight:200;
+}
+.feature_check_text{
+    height:40px;
+    font-size:18px;
+    line-height:40px;
+    color:#2d2d2a;
+    text-align:center;
+    font-family:'Roboto';
+    color:#00b050;
+    font-weight:200;
+}
+.footer-details{
+    font-size:14px;
+    font-family:'Roboto';
+}
+.footer-details a{
+    color:#2d2d2a;
+}
+@media only screen and (max-width: 420px){
+    #img1{
+        display:none;
+    }
+    #img2{
+        display:block;
+    }
+    #img3{
+        display:none;
+    }
+    .presentation-header-container{
+        width:calc(100% - 30px);
+        margin-left:15px;
+        margin-right:15px;
+    }
+    .text-overlay{
+        width:calc(100% - 30px);
+        margin-top:30px;
+        margin-left:15px;
+        margin-right:15px;
+    }
+    .image_logo{
+        padding:10px;
+        border-radius:5px;
+    }
+    .image_logo img{
+        width:60px;
+        height:auto;
+    }
+    .btn-login-landing{
+        font-size:14px;
+    }
+    h1.tag_line{
+        font-size:5vh;
+    }
+    h3.tag_line{
+        font-size:3.75vh;
+    }
+    h4.tag_line{
+        margin:0px;
+    }
+    .tag_line_outer{
+        width:calc(100% - 60px);
+        margin-left:30px;
+        margin-right:30px;
+    }
+    .btn-login-landing a{
+        font-size:14px;
+    }
+    .btn-start-landing{
+        font-size:18px;
+    }
+    .btn-start-landing a{
+        font-size:18px;
+    }
+    .trendzlink_logo{
+        width:100px;
+        margin-left:calc(50% - 50px);
+        margin-right:calc(50% - 50px);
+    }
+    .trendzlink_logo img{
+        width:100px;
+        height:auto;
+    }
+    .btn-start-landing-header{
+        height:40px;
+    }
+    .btn-start-landing-header a{
+        color: #FFF;
+        font-size:16px;
+    }
+    .btn-login-landing-header{
+        background: rgba(179,05,30,1);
+        border-radius:5px;
+        font-family: 'Roboto';
+        color: #FFF;
+        font-size:16px;
+        float:right;
+        position:relative;
+        height:40px;
+    }
+    .btn-login-landing-header a{
+        color: #FFF;
+        font-size:16px;
+    }
+    .feature-overlay{
+        width:calc(100% - 20px);
+        margin-left:10px;
+        margin-right:10px;
+        border-radius:5px;
+    }
+    .feature_icon_outer{
+        width:6.5vh;
+        height:6.5vh;
+    }
+    .feature_description{
+        width:calc(100% - 6.5vh);
+        height:6.5vh;
+    }
+    .feature_description_small{
+        position:relative;
+        float:left;
+        width:calc(100% - 6.5vh);
+        height:6.5vh;
+        padding:0 0.25vw 0 0.75vw;
+    }
+    .feature_block{
+        margin:1.675vh 0px;
+    }
+    .feature_name_pricing{
+        font-size:3vh;
+        line-height:6.5vh;
+        height:6.5vh;
+        font-weight:200;
+    }
+    .feature_name{
+        font-size:3.75vh;
+        line-height:6.5vh;
+        height:6.5vh;
+        font-weight:200;
+    }
+    .feature_small_desc{
+        display:none;
+    }
+    .features_block{
+        padding:0px 5px
+    }
+    .free_pack,
+    .paid_pack{
+        padding:0px;
+    }
+    .pack_name{
+        font-size:3.25vh;
+        padding:0px;
+        text-align:center;
+        line-height:6.5vh;
+        height:6.5vh;
+        color:#FFF;
+    }
+    .feature_check{
+        height:6.5vh;
+        font-size:3.5vh;
+        line-height:6.5vh;
+        text-align:center;
+        padding:0px;
+    }
+    .feature_check_text{
+        height:6.5vh;
+        font-size:2vh;
+        line-height:3.25vh;
+        text-align:center;
+        padding:0px;
+    }
+}

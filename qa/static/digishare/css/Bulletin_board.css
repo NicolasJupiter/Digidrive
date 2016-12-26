@@ -1,0 +1,352 @@
+.bulletin-heading{
+    text-align:center;
+    border-bottom:1px solid #2d2d2a;
+}
+.bulletin-name{
+    margin:0px;
+    padding:0.5em 0.5em;
+    color:#FFF;
+    font-family:'Roboto Condensed';
+    line-height:1.5;
+    height:4em;
+}
+.bulletin-syllabus{
+    font-size:14px;
+    font-family:'Roboto Condensed';
+    font-style:italic;
+}
+.bulletin-syllabus-url{
+    text-decoration:underline;
+    font-style:italic;
+    text-align:center;
+}
+.bulletin-last-date{
+    font-size:14px;
+    font-family:'Roboto Condensed';
+    margin:5px 0px;
+}
+.bulletin-exam-date{
+    text-align:center;
+    font-family:'Roboto Condensed';
+}
+.section-name1{
+    text-align:center;
+    font-size:14px;
+}
+
+.section-name2{
+    text-align:center;
+    font-size:16px;
+    color:#f00f3c;
+}
+
+.for_mobile_view
+{
+display:none;
+}
+
+.my-div
+{
+margin-top:50px;
+}
+
+.panel-default > .panel-heading .badge {
+   color: #f5f5f5;
+   background-color: #333;
+   width:100%;
+}
+.panel-default > .panel-footer + .panel-collapse > .panel-body {
+   border-bottom-color: #ddd;
+}
+
+.panel{
+   width:100%;
+}
+
+.panel-default{
+   width:100%;
+}
+
+.panel-body{
+   width:100%;
+}
+.for_navigation
+    {
+      display:block;
+    }
+
+@media only screen and (max-width:420px){
+        .panel-default > .panel-heading .badge {
+          color: #f5f5f5;
+          background-color: #333;
+          width:100%;
+        }
+        .panel-default > .panel-footer + .panel-collapse > .panel-body {
+          border-bottom-color: #ddd;
+        }
+
+        .bulletin-heading{
+            text-align:center;
+            border-bottom:1px solid #2d2d2a;
+
+        }
+        .bulletin-name{
+            margin:0px;
+            padding:0.5em 0.5em;
+            color:#FFF;
+            font-family:'Roboto Condensed';
+            line-height:1.5;
+            height:auto;
+        }
+        .bulletin-syllabus{
+            font-size:14px;
+            font-family:'Roboto Condensed';
+            font-style:italic;
+        }
+        .bulletin-syllabus-url{
+            text-decoration:underline;
+            font-style:italic;
+            text-align:center;
+        }
+        .bulletin-last-date{
+            font-size:14px;
+            font-family:'Roboto Condensed';
+            margin:5px 0px;
+        }
+        .bulletin-exam-date{
+            text-align:center;
+            font-family:'Roboto Condensed';
+        }
+        .section-name1{
+            text-align:center;
+            font-size:14px;
+        }
+
+        .my-div
+        {
+           margin-top:0px;
+        }
+
+        .for_mobile_view
+        {
+          display:block;
+          font-family:'Roboto Condensed';
+          font-size:14px;
+        }
+
+        .for_navigation
+        {
+        display:none;
+        }
+        h2{
+            margin:0;
+        }
+
+}
+
+@media (min-width:640px) and (max-width:767px){
+        .panel-default > .panel-heading .badge {
+          color: #f5f5f5;
+          background-color: #333;
+          width:100%;
+        }
+        .panel-default > .panel-footer + .panel-collapse > .panel-body {
+          border-bottom-color: #ddd;
+        }
+
+        .bulletin-heading{
+            text-align:center;
+            border-bottom:1px solid #2d2d2a;
+
+        }
+        .bulletin-name{
+            margin:0px;
+            padding:0.5em 0.5em;
+            color:#FFF;
+            font-family:'Roboto Condensed';
+            line-height:1.5;
+            height:auto;
+        }
+        .bulletin-syllabus{
+            font-size:14px;
+            font-family:'Roboto Condensed';
+            font-style:italic;
+        }
+        .bulletin-syllabus-url{
+            text-decoration:underline;
+            font-style:italic;
+            text-align:center;
+        }
+        .bulletin-last-date{
+            font-size:14px;
+            font-family:'Roboto Condensed';
+            margin:5px 0px;
+        }
+        .bulletin-exam-date{
+            text-align:center;
+            font-family:'Roboto Condensed';
+        }
+        .section-name1{
+            text-align:center;
+            font-size:14px;
+        }
+
+        .my-div
+        {
+           margin-top:0px;
+        }
+
+        .for_mobile_view
+        {
+          display:block;
+          font-family:'Roboto Condensed';
+          font-size:14px;
+        }
+
+        .for_navigation
+        {
+        display:none;
+        }
+        h2{
+            margin:0;
+        }
+}
+
+@media (min-width:421px) and (max-width:639px){
+        .panel-default > .panel-heading .badge {
+          color: #f5f5f5;
+          background-color: #333;
+          width:100%;
+        }
+        .panel-default > .panel-footer + .panel-collapse > .panel-body {
+          border-bottom-color: #ddd;
+        }
+
+        .bulletin-heading{
+            text-align:center;
+            border-bottom:1px solid #2d2d2a;
+
+        }
+        .bulletin-name{
+            margin:0px;
+            padding:0.5em 0.5em;
+            color:#FFF;
+            font-family:'Roboto Condensed';
+            line-height:1.5;
+            height:auto;
+        }
+        .bulletin-syllabus{
+            font-size:14px;
+            font-family:'Roboto Condensed';
+            font-style:italic;
+        }
+        .bulletin-syllabus-url{
+            text-decoration:underline;
+            font-style:italic;
+            text-align:center;
+        }
+        .bulletin-last-date{
+            font-size:14px;
+            font-family:'Roboto Condensed';
+            margin:5px 0px;
+        }
+        .bulletin-exam-date{
+            text-align:center;
+            font-family:'Roboto Condensed';
+        }
+        .section-name1{
+            text-align:center;
+            font-size:14px;
+        }
+
+        .my-div
+        {
+           margin-top:0px;
+        }
+
+        .for_mobile_view
+        {
+          display:block;
+          font-family:'Roboto Condensed';
+          font-size:14px;
+        }
+
+        .for_navigation
+        {
+        display:none;
+        }
+        h2{
+            margin:0;
+        }
+
+}
+
+@media (min-width:768px) and (max-width:1024px)
+{
+        .panel-default > .panel-heading .badge {
+          color: #f5f5f5;
+          background-color: #333;
+          width:100%;
+        }
+        .panel-default > .panel-footer + .panel-collapse > .panel-body {
+          border-bottom-color: #ddd;
+        }
+
+        .bulletin-heading{
+            text-align:center;
+            border-bottom:1px solid #2d2d2a;
+
+        }
+        .bulletin-name{
+            margin:0px;
+            padding:0.5em 0.5em;
+            color:#FFF;
+            font-family:'Roboto Condensed';
+            line-height:1.5;
+            height:auto;
+        }
+        .bulletin-syllabus{
+            font-size:14px;
+            font-family:'Roboto Condensed';
+            font-style:italic;
+        }
+        .bulletin-syllabus-url{
+            text-decoration:underline;
+            font-style:italic;
+            text-align:center;
+        }
+        .bulletin-last-date{
+            font-size:14px;
+            font-family:'Roboto Condensed';
+            margin:5px 0px;
+        }
+        .bulletin-exam-date{
+            text-align:center;
+            font-family:'Roboto Condensed';
+        }
+        .section-name1{
+            text-align:center;
+            font-size:14px;
+        }
+
+        .my-div
+        {
+           margin-top:0px;
+        }
+
+        .for_mobile_view
+        {
+          display:block;
+          font-family:'Roboto Condensed';
+          font-size:14px;
+        }
+
+        .for_navigation
+        {
+        display:none;
+        }
+        h2{
+            margin:0;
+        }
+}
+

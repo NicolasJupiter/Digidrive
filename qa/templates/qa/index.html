@@ -1,0 +1,277 @@
+<!--
+    Project, Copyright:  Digishare
+    Author:     Deepak MP
+-->
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extraconfig2 %}
+<link rel="stylesheet" href="{% static 'digishare/css/forum.css' %}" />
+{% endblock %}
+
+<!--
+<div class="forum-add-question-block myButton">
+    <div class="forum-add-question">
+        <a href="">
+            <div class="forum-add-question-icon-outer">
+                <div class="forum-add-question-icon"><i class="fa fa-plus"></i></div>
+            </div>
+        </a>
+        <div class="forum-add-question-text">Ask New Question</div>
+    </div>
+</div>-->
+
+{% block content %}
+<div class="col-md-8 col-xs-12 col-lg-8 col-md-offset-2 col-lg-offset-2" style="padding:0px;">
+	<div style="height:65px;"><p> &nbsp; </p></div>
+	
+
+	
+<div class="col-md-12 col-xs-12 col-lg-12">
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
+  {% endfor %}
+{% endif %}
+	
+    <ul class="nav nav-tabs nav-justified">
+        <li role="presentation" {% if active_tab == 'latest' %}class="active"{% endif %}><a href="#latest" data-toggle="tab"><span class="glyphicon glyphicon-th-list"></span> Latest <span class="badge">{{ questions|length }}</span></a></li>
+        <li role="presentation" {% if active_tab == 'unans' %}class="active"{% endif %}><a href="#unans" data-toggle="tab"><span class="glyphicon glyphicon-question-sign"></span> Unanswered <span class="badge">{{ totalnoans }}</span></a></li>
+        <li role="presentation" {% if active_tab == 'reward' %}class="active"{% endif %}><a href="#reward" data-toggle="tab"><span class="glyphicon glyphicon-star"></span> Hot <span class="badge">{{ reward | length }}</span></a></li>
+    </ul>
+<div class="tab-content">
+<div class="tab-pane {% if active_tab == 'latest' %}active{% endif %}" id="latest">
+	
+	
+	
+	
+{% if questions %}
+  {% for question in questions %}
+      <div class="panel panel-default box-shadow my-div15">
+          <div class="forum-body">
+              <h6 class="my-h6">
+                  {% if question.reward %}<span class="glyphicon glyphicon-fire pull-left" aria-hidden="true">&nbsp;</span>{% endif %}
+                  <span class="glyphicon glyphicon-tag pull-left" ></span>
+				  <span>{% for tag in question.tags.all %}<a href="{% url 'qa_tag' tag.slug %}"><tag>&nbsp;{{ tag.slug }},</tag></a>{% endfor %}
+				  </span><span class="my_category_label pull-right">{{ question.pub_date }}</span></h6>
+
+			  <br/>
+              <div class="forum-heading text-blue"><a href="{% url 'qa_detail' question.id %}">{{ question.title }}</a></div>
+              <div class="row my-div16">
+                  <div class="row my-div17">
+                  <p class="forum-short-answer">{{question.description}}</p>
+              </div>
+              </div>
+			  <div class="row">
+	  <div class="col-sm-12">
+		  <div class="pull-right">
+              <small>
+                  <div class="ques">Asked by:&nbsp;</div>
+                      <a href="{% url 'qa_profile' question.user.id %}">{{question.user}}</a>
+                  </small>
+				  <small><div class="ques">
+					  {{ question.num_answers }}&nbsp;{% if question.num_answers == 1 %}Answer{% else %}Answers{% endif %} & {{ question.views }}&nbsp;Views
+					  </div></small></div>
+				  </div>
+    		</div>
+          </div>
+      </div>
+  {% endfor %}
+
+<div class="pagination">
+  {% if is_paginated %}
+      <div class="pagination">
+          <span class="page-links">
+              {% if page_obj.has_previous %}
+                  <a href="{% url 'qa_index' %}?page={{ page_obj.previous_page_number }}">previous</a>
+              {% endif %}
+              <span class="page-current">
+                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+              </span>
+              {% if page_obj.has_next %}
+                  <a href="{% url 'qa_index' %}?page={{ page_obj.next_page_number }}">next</a>
+              {% endif %}
+          </span>
+      </div>
+  {% endif %}
+</div>
+
+{% else %}
+<div class="alert alert-warning" role="alert">No Questions are available!</div>
+{% endif %}
+</div>
+	
+	
+	
+
+<div class="tab-pane {% if active_tab == 'unans' %}active{% endif %}" id="unans">
+{% if noans %}
+  {% for question in noans %}
+      <div class="panel panel-default box-shadow my-div15 my-div15-first-panel">
+          <div class="forum-body">
+              <h6 class="my-h6">
+                  {% if question.reward %}<span class="glyphicon glyphicon-fire pull-left" aria-hidden="true">&nbsp;</span>{% endif %}
+                  <span class="glyphicon glyphicon-tag pull-left" ></span>
+				  <span>{% for tag in question.tags.all %}<a href="{% url 'qa_tag' tag.slug %}"><tag>&nbsp;{{ tag.slug }},</tag></a>{% endfor %}
+				  </span><span class="my_category_label pull-right">{{ question.pub_date }}</span></h6>
+
+			  <br/>
+              <div class="forum-heading text-blue"><a href="{% url 'qa_detail' question.id %}">{{ question.title }}</a></div>
+              <div class="row my-div16">
+                  <div class="row my-div17">
+                  <p class="forum-short-answer">{{question.description}}</p>
+              </div>
+              </div>
+			  <div class="row">
+	  <div class="col-sm-12">
+		  <div class="pull-right"><small><div class="ques">Asked by:&nbsp;<span style="font-weight:bold;"><a href="{% url 'qa_profile' question.user.id %}">
+			  {{question.user}}</a></span></div></small>
+			  <small><div class="ques">
+					  {{ question.num_answers }}&nbsp;{% if question.num_answers == 1 %}Answer{% else %}Answers{% endif %} & {{ question.views }}&nbsp;Views
+					  </div></small></div>
+				  </div>
+    		</div>
+          </div>
+      </div>
+  {% endfor %}
+<div class="pagination">
+    <span class="step-links">
+        {% if noans.has_previous %}
+            <a href="?noans_page={{ noans.previous_page_number }}&active_tab=unans">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ noans.number }} of {{ noans.paginator.num_pages }}.
+        </span>
+
+        {% if noans.has_next %}
+            <a href="?noans_page={{ noans.next_page_number }}&active_tab=unans">next</a>
+        {% endif %}
+    </span>
+</div>
+{% else %}
+<div class="alert alert-warning" role="alert">No Questions are available!</div>
+{% endif %}
+
+</div>
+
+<div class="tab-pane {% if active_tab == 'reward' %}active{% endif %}" id="reward">
+{% if reward %}
+  {% for question in reward %}
+      <div class="panel panel-default box-shadow my-div15 my-div15-first-panel">
+          <div class="forum-body">
+              <h6 class="my-h6">
+                  {% if question.reward %}<span class="glyphicon glyphicon-fire pull-left" aria-hidden="true">&nbsp;</span>{% endif %}
+                  <span class="glyphicon glyphicon-tag pull-left" ></span>
+				  <span>{% for tag in question.tags.all %}<a href="{% url 'qa_tag' tag.slug %}"><tag>&nbsp;{{ tag.slug }},</tag></a>{% endfor %}
+				  </span><span class="my_category_label pull-right">{{ question.pub_date }}</span></h6>
+
+			  <br/>
+              <div class="forum-heading text-blue"><a href="{% url 'qa_detail' question.id %}">{{ question.title }}</a></div>
+              <div class="row my-div16">
+                  <div class="row my-div17">
+                  <p class="forum-short-answer">{{question.description}}</p>
+              </div>
+              </div>
+			  <div class="row">
+	  <div class="col-sm-12">
+		  <div class="pull-right"><small><div class="ques">Asked by:&nbsp;<span style="font-weight:bold;"><a href="{% url 'qa_profile' question.user.id %}">
+			  {{question.user}}</a></span></div></small>
+			  <small><div class="ques">
+					  {{ question.num_answers }}&nbsp;{% if question.num_answers == 1 %}Answer{% else %}Answers{% endif %} & {{ question.views }}&nbsp;Views
+					  </div></small></div>
+				  </div>
+    		</div>
+          </div>
+      </div>
+  {% endfor %}
+
+{% else %}
+<div class="alert alert-warning" role="alert">No Questions are available!</div>
+{% endif %}
+</div>
+
+  </div>
+</div>
+
+<div class="col-md-4">
+
+  {% if noans.count %}
+  <div class="panel panel-warning">
+    <div class="panel-heading">
+      <h3 class="panel-title">Unanswered Questions</h3>
+    </div>
+    <div class="panel-body">
+    <ul>
+      {% for question in noans %}
+      <li><a href="{% url 'qa_detail' question.id %}">{{ question.title }}</a></li>
+      {% endfor %}
+    </ul>
+    </div>
+  </div>
+  {% endif %}
+  {% comment %}
+  {% if user.is_authenticated %}
+
+  <div class="span3 well">
+    <center>
+      <a href="{% url 'qa_profile' user.id %}" data-toggle="modal">
+        {% if user.userqaprofile.picture %}
+          <img src="{{ user.userqaprofile.picture }}" name="aboutme" width="100" height="100" class="img-circle">
+        {% else %}
+          <img src="{% static 'qa/user.png' %}" name="aboutme" width="100" height="100" class="img-circle">
+        {% endif %}
+      </a>
+      <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+      <a href="/profile/{{ user.id }}">My Profile</a> | <!--to consider-->
+      <a href="/logout/">Logout</a>
+    </center>
+  </div>
+  {% else %}
+  <a class="btn btn-block btn-success" href="/login"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Login | Sign Up</a><br/>
+  {% endif %}{% endcomment %}
+
+</div>
+{% block newquestion %}
+    <div class="forum-add-question-block1">
+    <div class="forum-add-question">
+        <a href="{% url 'qa_create_question' %}">
+                <div class="forum-add-question-icon-outer pull-left">
+                    <div class="forum-add-question-icon"><i class="fa fa-plus"></i></div>
+                </div>
+        </a>
+    </div>
+</div>
+
+<div class="forum-add-question-block1" style="bottom:100px;">
+    <div class="forum-add-question pull-left"><a href="" data-toggle="modal" data-target="#Searchmodal">
+                <div class="forum-add-question-icon-outer forum-add-question-block1-search">
+                    <div class="forum-add-question-icon"><i class="fa fa-search"></i></div>
+                </div></a>
+    </div>
+</div>
+
+    <div class="modal fade" id="Searchmodal" role="dialog" style="top:20%;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Search this forum</h4><div class="modal-body">
+                    <div class="col-md-offset-1 col-lg-offset-1 col-md-10 col-lg-10 col-xs-12 row">
+                        <div id="search">
+                               <form method="GET" action="{% url 'qa_search' %}">
+                                     <input type="search" value="" name="word" placeholder="Keywords you're looking for" style="width:70%;float:left;height:33px;padding-right:5px;"/>
+                                     <input class="btn btn-block btn-success" type="submit" value="Search" style="width:25%;float:left;padding-left:5px;"/>
+                               </form><div style="clear:both;"></div>
+                        </div>
+                </div></div>
+                    <br><br>
+                    <div class="">
+                      <p>Search for questions here...</p>
+                    </div>
+                </div>
+            </div>
+        </div></div>
+
+	{% endblock newquestion %}
+    </div>
+{% endblock content %}

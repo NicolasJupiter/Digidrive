@@ -1,0 +1,118 @@
+<!--
+    Project, Copyright:  Digishare
+    Author:     Deepak MP
+-->
+{% load video_select %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- Charset Configuration -->
+        <meta charset="utf-8">
+        <!-- Load Stylesheet -->
+		<!-- Include Jquery -->
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<!-- Load Javascripts -->
+		<script defer src="{% static 'digishare/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'digishare/js/dropzone.js' %}"></script>
+		<script src="{% static 'digishare/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+		<script src="{% static 'digishare/js/d3.js' %}"></script>
+	
+		<!--loading css and script for forum-->
+		<link rel="icon" type="image/png" href="static/qa/icon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+		<link href="{% static 'digishare/css/qa.css' %}" rel="stylesheet"/>
+
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+		{% block title %}
+		<!-- Title of Webpage -->
+        <title>Chanakya Trendzlink Mock Portal</title>
+		{% endblock %}
+
+		<!-- Block for additional config -->
+		{% block extraconfig %}	{% endblock %}
+
+		<!-- Mobile Specific meta -->
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+		<link rel='icon' type='image/x-icon' href="{% static 'assets/images/favicon.ico' %}" />
+
+	   	<!-- Stylesheet and fonts -->
+	   	<link rel="stylesheet" type="text/css" href="{% static 'digishare/css/bootstrap.min.css' %}" />
+	   	<link rel="stylesheet" type="text/css" href="{% static 'digishare/css/jquery.mCustomScrollbar.min.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'digishare/css/base.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'digishare/css/dropzone.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'digishare/css/font-awesome.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'digishare/css/app.css' %}" />
+		<!--link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+
+		<!-- Block for additional config -->
+		{% block extraconfig2 %}{% endblock %}
+
+</head>
+{% load i18n %}
+<body>
+
+	<!-- Configuration for header -->
+<header>
+{% block topheader %}
+{% endblock %}
+
+{% block extratopheader %}
+
+	
+	{% endblock %}
+	
+	
+	
+	
+{% block concept %}{% endblock %}
+</header>
+
+	<!-- Configuration for main body -->
+{% block content %}
+{% endblock content %}
+	<!-- Remove after complete design -->
+		<div class="background-gradient">
+		</div>
+        <div class="container container-block">
+		{% block leftsidebar %}{% endblock %}
+	    {% block body %}{% endblock %}
+	    {% block rightsidebar %}{% endblock %}
+	    {% block articles %}{% endblock %}
+        </div>
+	
+	
+	{% block js %}
+<script>
+$(function () {
+  $('a[href="#search"]').on('click', function(event) {
+    event.preventDefault();
+    $('#search').addClass('open');
+    $('#search > form > input[type="search"]').focus();
+  });
+
+  $('#search, #search button.close').on('click keyup', function(event) {
+    if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+      $(this).removeClass('open');
+    }
+  });
+
+});
+</script>
+{% endblock js %}
+{%block extra_js %}
+	{% endblock extra_js %}
+	{% block googleanalyticsscript %}
+
+{% endblock googleanalyticsscript %}
+</body>
+</html>
